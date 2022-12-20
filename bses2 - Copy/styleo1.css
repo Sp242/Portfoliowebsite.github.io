@@ -1,0 +1,51 @@
+.page{
+	width: 1500px;
+	height: auto;
+	border-style: groove;
+}
+.header{
+	width: 900px;
+	height: 600px;
+	border-style: groove;
+	margin-top: 50px;
+}
+.header .image{
+	width: 500px;
+	height: 280px;
+	border-style: groove;
+	background-image: url(11.gif);
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+
+.header .news{
+	width: 280px;
+	height: 580px;
+	border-style: groove;
+	float: right;
+}
+.header .news h2 {
+	color: green;
+	margin-left: 35px;
+}
+.header .news .new{
+	width: 275px;
+	height: 499px;
+	border-style: groove;
+}
+.header .news .new h4{
+	color: blue;
+	text-align: center;
+}
+.header h3 {
+	color: blue;
+	text-shadow: blue;
+	text-align: center;
+}
+.footerpart{
+	width: 900px;
+	height: 25px;
+	margin-top: 5px;
+	background-color: red;
+	border-style: groove;
+}
