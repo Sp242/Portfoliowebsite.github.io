@@ -20,6 +20,7 @@
 body{
 	background: var(--bg-color);
 	color: var(--text-color);
+	overflow-x: hidden;
 }
 header{
 	position: fixed;
@@ -957,6 +958,74 @@ form textarea{
 	}
 }
 
+@media (max-width: 990px){
+	#menu-icon{
+		display: block;
+	}
+	header{
+		padding: 12px 4%;
+	}
+	header.sticky{
+		padding: 10px 4%;
+	}
+	section{
+		padding: 100px 4% 60px;
+	}
+	.home{
+		height: auto;
+		min-height: calc(100vh - 80px);
+		align-items: center;
+		justify-content: center;
+		background-position: center top;
+	}
+	.home-text{
+		width: 100%;
+		max-width: 620px;
+	}
+	.home-text h1{
+		font-size: 3.5rem;
+	}
+	.home-text h3{
+		font-size: 2.3rem;
+	}
+	.home-text p{
+		font-size: 1rem;
+		margin-bottom: 30px;
+	}
+	.navlist{
+		position: fixed;
+		top: 0;
+		right: 0;
+		height: 100vh;
+		width: min(280px, 90vw);
+		display: flex;
+		flex-direction: column;
+		background: var(--bg-color);
+		text-align: left;
+		padding: 100px 22px 24px;
+		transition: transform .35s ease, opacity .35s ease;
+		transform: translateX(100%);
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		z-index: 10002;
+		box-shadow: -24px 0 40px rgba(0,0,0,0.25);
+	}
+	.navlist a{
+		display: block;
+		margin: 18px 0;
+		font-size: 18px;
+		transition: color .35s ease;
+		color: var(--text-color);
+	}
+	.navlist.open{
+		transform: translateX(0);
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+	}
+}
+
 @media (max-width: 920px){
 	.about{
 		grid-template-columns: 1fr;
@@ -979,42 +1048,76 @@ form textarea{
 	.experience-stats{
 		grid-template-columns: 1fr;
 	}
+	.services-content{
+		grid-template-columns: 1fr;
+	}
+	.tech-content{
+		grid-template-columns: 1fr;
+	}
+	.portfolio-content{
+		grid-template-columns: 1fr;
+	}
 }
 
-@media (max-width: 840px){
-	#menu-icon{
-		display: block;
+@media (max-width: 760px){
+	section{
+		padding: 90px 4% 50px;
 	}
-	.navlist{
-		position: absolute;
-		top: -1000px;
-		right: 0;
-		left: 0;
+	.home-text h1{
+		font-size: 3rem;
+	}
+	.home-text h3{
+		font-size: 2rem;
+	}
+	.home-text p{
+		font-size: 0.95rem;
+	}
+	.button{
 		display: flex;
 		flex-direction: column;
-		background: var(--bg-color);
-		text-align: left;
-		transition: all .45s ease;
+		align-items: flex-start;
+		gap: 18px;
 	}
-	.navlist a{
-		display: block;
-		margin: 17px;
-		font-size: 20px;
-		transition: all .45s ease;
-		color: var(--text-color);
+	.portfolio-content{
+		grid-template-columns: 1fr;
 	}
-	.navlist a:hover{
-		color: var(--main-color);
+	.experience-card{
+		flex-direction: column;
+		padding: 24px;
 	}
-	.navlist a.active{
-		color: var(--text-color);
+	.filter-btn{
+		width: 100%;
 	}
-	.navlist.open{
-		top: 100%;
+	.tech-card{
+		padding: 24px;
+	}
+	.contact-form textarea{
+		height: 220px;
+	}
+	.end{
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1rem;
 	}
 }
 
 @media (max-width: 520px){
+	.header,
+	header{
+		padding: 10px 4%;
+	}
+	section{
+		padding: 80px 4% 40px;
+	}
+	.home-text h1{
+		font-size: 2.6rem;
+	}
+	.home-text h3{
+		font-size: 1.9rem;
+	}
+	.home-text p{
+		font-size: 0.95rem;
+	}
 	.button{
 		display: flex;
 		align-items: flex-start;
@@ -1033,5 +1136,22 @@ form textarea{
 	}
 	.filter-btn{
 		width: 100%;
+	}
+	.contact-form textarea{
+		height: 180px;
+	}
+	.tech-tags{
+		gap: 8px;
+	}
+	.tech-tags span{
+		font-size: 13px;
+	}
+	.project-preview{
+		aspect-ratio: 16 / 12;
+	}
+	.end{
+		padding: 15px 4%;
+		flex-direction: column;
+		align-items: flex-start;
 	}
 }

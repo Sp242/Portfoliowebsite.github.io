@@ -11,6 +11,13 @@ menu.onclick = () => {
 	navlist.classList.toggle('open');
 };
 
+navlist.querySelectorAll('a').forEach((link) => {
+	link.addEventListener('click', () => {
+		menu.classList.remove('bx-x');
+		navlist.classList.remove('open');
+	});
+});
+
 window.onscroll = () => {
 	menu.classList.remove('bx-x');
 	navlist.classList.remove('open');
